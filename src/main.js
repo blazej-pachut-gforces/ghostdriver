@@ -44,7 +44,6 @@ _log = ghostdriver.logger.create("GhostDriver");
 // Initialize the configuration
 require("./config.js").init(ghostdriver.system.args);
 ghostdriver.config = require("./config.js").get();
-
 // Enable "strict mode" for the 'parseURI' library
 require("./third_party/parseuri.js").options.strictMode = true;
 

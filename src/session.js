@@ -360,8 +360,8 @@ ghostdriver.Session = function(desiredCapabilities) {
         // 9. Log Page console messages
         page.browserLog = [];
         page.onConsoleMessage = function(msg, lineNum, sourceId) {
-            // Log as debug
-            _log.debug("page.onConsoleMessage", msg);
+            // Log browser console.log
+            _log.browser("browser", msg)
 
             // Register as part of the "browser" log
             page.browserLog.push(_createLogEntry("INFO", msg + " (" + sourceId + ":" + lineNum + ")"));

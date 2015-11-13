@@ -68,6 +68,12 @@ function Logger (context) {
                 scope +
                 (message && message.length > 0 ? separator + message : "")
             );
+        },
+        browser : function(scope, message) {
+            console.browser(context + separator +
+                scope +
+                (message && message.length > 0 ? separator + message : "")
+            );
         }
     };
 

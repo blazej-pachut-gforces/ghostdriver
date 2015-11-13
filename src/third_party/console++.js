@@ -56,6 +56,7 @@ var _ANSICODES = {
         WARNING     : 2,    //< alias for "WARN"
         INFO        : 3,
         INFORMATION : 3,    //< alias for "INFO"
+        BROWSER     : 3,
         DEBUG       : 4
     },
     _LEVELS_COLOR = [   //< _LEVELS_COLOR position matches the _LEVELS values
@@ -65,11 +66,12 @@ var _ANSICODES = {
         "green"
     ],
     _LEVELS_NAME = [    //< _LEVELS_NAME position matches the _LEVELS values
-        "NONE",
-        "ERROR",
-        "WARN ",
-        "INFO ",
-        "DEBUG"
+        "NONE   ",
+        "ERROR  ",
+        "WARN   ",
+        "INFO   ",
+        "DEBUG  ",
+        "BROWSER"
     ],
     _console    = {
         error   : console.error,
@@ -281,9 +283,10 @@ console.debug = function(msg) {
         _invokeOnOutput(msg, _LEVELS.DEBUG);
     }
 };
-console.log = function(msg) {
-    if (arguments.length > 0) {
-        _console.log.apply(this, arguments);
+console.browser = function(msg) {
+    if (arguments.length > 0 && this.isLevelVisible(_LEVELS.BROWSER)) {
+        _console.info.apply(this, _decorateArgs(arguments, 5));
+        _invokeOnOutput(msg, _LEVELS.BROWSER);
     }
 };
 
