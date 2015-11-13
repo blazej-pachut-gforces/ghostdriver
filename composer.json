@@ -1,0 +1,11 @@
+{
+    "name": "gforces/ghostdriver",
+    "description": "Ghostdriver fork that allows viewing console logging in debug log",
+    "authors": [
+        {
+            "name": "Blazej Pachut",
+            "email": "blazej.pachut@gforces.pl"
+        }
+    ],
+    "require": {}
+}

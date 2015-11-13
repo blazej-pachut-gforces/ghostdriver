@@ -16,3 +16,5 @@ build
 
 # vim temp files
 *.swp
+
+/vendor/
